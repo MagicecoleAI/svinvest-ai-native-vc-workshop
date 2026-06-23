@@ -293,6 +293,7 @@ img {
 .lab-grid article,
 .role-grid article,
 .poc-grid article,
+.topic-grid article,
 .materials-grid a {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -323,6 +324,7 @@ img {
 .concept-grid p,
 .lab-grid p,
 .role-grid p,
+.topic-grid p,
 .poc-grid p,
 .materials-grid p,
 .run-sheet p {
@@ -375,10 +377,175 @@ img {
   font-size: 1.16rem;
 }
 
+.lecture-pack {
+  background: var(--panel);
+  border-block: 1px solid var(--line);
+}
+
+.lecture-pack-inner {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 5vw, 60px);
+  align-items: center;
+  padding-block: clamp(44px, 7vw, 84px);
+}
+
+.lecture-cover {
+  overflow: hidden;
+  margin: 0;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.lecture-cover img {
+  width: 100%;
+  height: auto;
+}
+
+.lecture-summary h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 3.25rem);
+  line-height: 1.12;
+}
+
+.lecture-summary p:not(.section-kicker) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.lecture-summary .button {
+  margin-top: 26px;
+}
+
+.study-map-section,
+.supplement-section,
+.practice-section,
 .lab-section,
 .library-section,
 .materials-section {
   padding-block: clamp(48px, 8vw, 96px);
+}
+
+.study-spine {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.study-spine article {
+  position: relative;
+  min-height: 280px;
+  padding: 24px 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--blue);
+  border-radius: 8px;
+}
+
+.study-spine article:nth-child(2) {
+  border-top-color: var(--green);
+}
+
+.study-spine article:nth-child(3) {
+  border-top-color: var(--amber);
+}
+
+.study-spine article:nth-child(4) {
+  border-top-color: var(--red);
+}
+
+.study-spine article:nth-child(5) {
+  border-top-color: var(--violet);
+}
+
+.study-spine span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  background: rgba(22, 77, 216, 0.1);
+  color: var(--blue);
+  border-radius: 50%;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 900;
+}
+
+.study-spine h3 {
+  margin: 18px 0 10px;
+  font-size: 1.12rem;
+  line-height: 1.26;
+}
+
+.study-spine p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.supplement-section {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: clamp(28px, 5vw, 60px);
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.topic-grid article {
+  padding: 22px;
+}
+
+.topic-grid h3 {
+  margin: 12px 0 10px;
+  font-size: 1.08rem;
+  line-height: 1.28;
+}
+
+.practice-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(28px, 5vw, 60px);
+}
+
+.practice-rail {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.practice-rail li {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  align-items: center;
+  min-height: 58px;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--amber);
+  border-radius: 8px;
+}
+
+.practice-rail strong {
+  color: var(--red);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+}
+
+.practice-rail span {
+  color: var(--ink);
+  font-weight: 800;
 }
 
 .lab-grid {
@@ -534,7 +701,7 @@ img {
 
 .materials-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-top: 34px;
 }
@@ -582,6 +749,9 @@ img {
   .split-section,
   .visual-proof,
   .poc-section,
+  .lecture-pack-inner,
+  .supplement-section,
+  .practice-section,
   .guardrail-inner {
     grid-template-columns: 1fr;
   }
@@ -592,7 +762,9 @@ img {
 
   .concept-grid,
   .lab-grid,
-  .role-grid {
+  .role-grid,
+  .study-spine,
+  .materials-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -629,8 +801,19 @@ img {
   .concept-grid,
   .lab-grid,
   .role-grid,
+  .study-spine,
+  .topic-grid,
   .materials-grid {
     grid-template-columns: 1fr;
+  }
+
+  .study-spine article {
+    min-height: auto;
+  }
+
+  .practice-rail li {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .run-sheet article {

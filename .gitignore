@@ -4,6 +4,7 @@ tmp/
 outputs/*
 !outputs/
 !outputs/SV_AI_Native_90일_실행프로그램.pptx
+!outputs/sv-seminar-20260625.pdf
 outputs/*.inspect.ndjson
 outputs/.last_ppt_tmp_dir
 outputs/~$*
