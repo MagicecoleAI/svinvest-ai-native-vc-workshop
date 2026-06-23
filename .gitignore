@@ -1,0 +1,9 @@
+.DS_Store
+*.md
+tmp/
+outputs/*
+!outputs/
+!outputs/SV_AI_Native_90일_실행프로그램.pptx
+outputs/*.inspect.ndjson
+outputs/.last_ppt_tmp_dir
+outputs/~$*
