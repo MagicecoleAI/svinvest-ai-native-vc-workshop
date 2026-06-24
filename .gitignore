@@ -6,7 +6,6 @@ outputs/*
 !outputs/SV_AI_Native_90일_실행프로그램.pptx
 !outputs/SV_AI_Native_90일_실행프로그램.pdf
 !outputs/sv-seminar-20260625.pdf
-!outputs/seminar-20260626.pdf
 outputs/*.inspect.ndjson
 outputs/.last_ppt_tmp_dir
 outputs/~$*
