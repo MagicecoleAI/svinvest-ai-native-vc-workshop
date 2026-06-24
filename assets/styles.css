@@ -54,6 +54,26 @@ img {
   max-width: 100%;
 }
 
+.hero h1,
+.thesis blockquote,
+.concept-grid h2,
+.section-title h2,
+.lecture-summary h2,
+.run-sheet h3,
+.study-spine h3,
+.topic-grid h3,
+.insight-grid h3,
+.lens-grid h3,
+.lab-grid h3,
+.role-grid h3,
+.poc-grid h3,
+.materials-grid strong,
+.guardrail-inner h2 {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: strict;
+}
+
 .site-header {
   position: sticky;
   top: 0;
