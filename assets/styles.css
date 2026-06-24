@@ -438,20 +438,28 @@ img {
 .run-sheet article {
   display: grid;
   grid-template-columns: 110px 1fr;
-  gap: 18px;
+  column-gap: 18px;
+  row-gap: 8px;
   padding: 22px 0;
   border-top: 1px solid var(--line);
 }
 
 .run-sheet time {
+  grid-row: 1 / span 2;
   color: var(--red);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-weight: 900;
 }
 
 .run-sheet h3 {
+  grid-column: 2;
   margin: 0 0 6px;
   font-size: var(--title-card);
+}
+
+.run-sheet p {
+  grid-column: 2;
+  max-width: 620px;
 }
 
 .lecture-pack {
@@ -600,10 +608,7 @@ img {
 }
 
 .enterprise-section .section-title {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(24px, 5vw, 56px);
-  align-items: end;
+  max-width: 980px;
 }
 
 .enterprise-section .section-title h2 {
@@ -611,8 +616,8 @@ img {
 }
 
 .enterprise-lede {
-  max-width: 880px;
-  margin: 28px 0 0 auto;
+  max-width: 980px;
+  margin: 22px 0 0;
   color: rgba(255, 255, 255, 0.78);
   font-size: 1.05rem;
   font-weight: 650;
@@ -1040,6 +1045,13 @@ img {
   .run-sheet article {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .run-sheet time,
+  .run-sheet h3,
+  .run-sheet p {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .site-footer {
